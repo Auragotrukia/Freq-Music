@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useMemo, useState } from 'react';
+import ListenTogether from './src/components/ListenTogether';
 import {
   Image,
   Modal,
@@ -80,6 +81,7 @@ export default function App() {
               <View style={styles.heroOverlay} />
               <View style={styles.heroMeta}><View style={styles.heroPills}><Chip tone="cyan">{quality}</Chip><Chip tone="peach">{canvas ? 'CANVAS LIVE' : 'STILL ART'}</Chip></View><Text style={styles.heroTrack}>{tracks[0].title}</Text><Text style={styles.heroArtist}>{tracks[0].artist} · {tracks[0].album}</Text><View style={styles.progressTrack}><View style={styles.progressFill} /></View><View style={styles.progressLabels}><Text style={styles.miniText}>1:42</Text><Text style={styles.miniText}>4:03</Text></View><View style={styles.playerControls}><IconButton label="↶" /><IconButton label="◀" /><Pressable style={styles.playButton} onPress={() => setPlaying(!playing)}><Text style={styles.playText}>{playing ? 'Ⅱ' : '▶'}</Text></Pressable><IconButton label="▶" /><IconButton label="↷" active /></View></View>
             </View>
+            <ListenTogether />
             <View style={styles.sectionHeader}><Text style={styles.sectionTitle}>Made for your signal</Text><Text style={styles.link}>See all</Text></View>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.horizontalRow}>{tracks.slice(1).map((track, i) => <Pressable key={track.id} style={styles.mixCard} onPress={() => notify(`Queued ${track.title}`)}><Image source={{ uri: track.art }} style={styles.mixArt} /><Text style={styles.mixTitle}>{['Late night / low light', 'Focus, but make it warm', 'Sunday in slow motion'][i]}</Text><Text style={styles.mixMeta}>{track.artist} · {track.quality}</Text></Pressable>)}</ScrollView>
             <View style={styles.sectionHeader}><Text style={styles.sectionTitle}>Tonight’s constellation</Text><Chip tone="purple">NEW RELEASES</Chip></View>

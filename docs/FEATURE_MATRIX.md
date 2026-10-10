@@ -11,4 +11,5 @@
 | Presence | Discord Rich Presence toggle and custom-card entry point | Discord OAuth/RPC bridge and native background lifecycle |
 | Scrobbling | Last.fm/ListenBrainz controls | OAuth tokens, 50% play threshold, retry queue |
 | Sources | Provider cards and extension manager entry point | Signed extension registry, source health checks, provider adapters |
+| Listen Together | Create/join/leave room UI, participant list, room activity chat, sync status, join/leave chimes | WebSocket room service, host election, clock drift correction, provider playback authorization |
 | Audio tools | Bit-perfect, Atmos fallback, data saver, sleep timer, smart playback | Native audio route/equalizer APIs and per-network policy |

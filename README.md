@@ -24,6 +24,7 @@ pnpm ios
 - Extension manager surface for Spotify, TIDAL, Qobuz, YouTube Music and other SpotiFLAC-style providers
 - Settings for equalizer integration, bit-perfect output, sleep timer, skip silence, playback speed, data saver, UI feel and smart playback
 - Portrait-first, one-handed navigation with Home / Search / Library / Settings tabs
+- Listen Together flow with create/join room codes, participant presence, synchronized playback status, room activity chat, leave action, and local join/leave chimes
 
 ## Important implementation boundary
 
