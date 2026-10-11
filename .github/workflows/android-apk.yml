@@ -37,25 +37,29 @@ jobs:
       - name: Generate native Android project
         run: pnpm exec expo prebuild --platform android --no-install
 
-      - name: Build debug APK
+      - name: Build standalone release APK
         working-directory: android
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
+        run: ./gradlew assembleRelease --no-daemon --stacktrace
+
+      - name: Verify JavaScript bundle is packaged
+        working-directory: android
+        run: unzip -l app/build/outputs/apk/release/app-release.apk | grep -E 'assets/index.android.bundle|assets/.*\.wav'
 
       - name: Publish APK release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: apk-${{ github.run_number }}
-          name: Freq Music APK build ${{ github.run_number }}
+          name: Freq Music standalone APK build ${{ github.run_number }}
           body: |
-            Installable Freq Music Android debug APK.
+            Standalone Freq Music Android release APK.
 
-            This build is for testing and direct installation, not Google Play production distribution.
-          files: android/app/build/outputs/apk/debug/app-debug.apk
+            This build packages the JavaScript bundle and Listen Together feature, so it does not require Metro, localhost, USB, or a development computer.
+          files: android/app/build/outputs/apk/release/app-release.apk
           make_latest: true
 
       - name: Upload workflow artifact
         uses: actions/upload-artifact@v4
         with:
-          name: freq-music-apk
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          name: freq-music-standalone-apk
+          path: android/app/build/outputs/apk/release/app-release.apk
           retention-days: 30
