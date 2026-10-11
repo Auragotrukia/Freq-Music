@@ -17,6 +17,7 @@ pnpm ios
 ## Included product surfaces
 
 - Home discovery, charts/moods-style entry points, recommendations, queue actions, likes, playlists and offline library surface
+- 12 bundled, license-safe demo tracks with working offline play/pause, track selection, expanded search across title/artist/album, and animated Canvas-style visualizer bars
 - Full now-playing card with Canvas-style motion-art direction, crossfade controls and animated progress treatment
 - Quality selector for Dolby Atmos, 24-bit Hi-Res FLAC, 16-bit lossless FLAC and data saver fallback behavior
 - Word-synced lyrics / translation / Music DNA / recognition entry-point direction in the player architecture
@@ -28,7 +29,7 @@ pnpm ios
 
 ## Important implementation boundary
 
-This repository is a functional UI and interaction prototype. Live playback, provider authentication, DRM-safe FLAC/Atmos manifests, downloads, background media sessions, native equalizer/ringtone APIs, Discord OAuth, and platform-specific audio routing should be connected through user-authorized service adapters before production distribution. The UI labels connected providers and unavailable integrations explicitly rather than pretending third-party credentials exist.
+This repository is a functional UI and interaction prototype. Production provider streaming, provider authentication, DRM-safe FLAC/Atmos manifests, downloads, background media sessions, native equalizer/ringtone APIs, Discord OAuth, and platform-specific audio routing should be connected through user-authorized service adapters before production distribution. The UI labels connected providers and unavailable integrations explicitly rather than pretending third-party credentials exist.
 
 ## Source inspiration
 

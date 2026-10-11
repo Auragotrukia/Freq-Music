@@ -2,8 +2,8 @@
 
 | Area | UI delivered | Production adapter needed |
 | --- | --- | --- |
-| Discovery | Home recommendations, search, tags, track rows | Catalog/search API and recommendation history |
-| Playback | Now playing, play/pause, progress, queue affordances | Expo AV/native media session, background controls, gapless/crossfade |
+| Discovery | 12-track searchable local catalog, title/artist/album matching, home recommendations, tags, track rows | Authorized catalog/search API and recommendation history |
+| Playback | Bundled offline demo audio, working play/pause, selectable tracks, now playing, queue affordances | Provider stream resolver, native media session, background controls, gapless/crossfade |
 | Quality | Dolby Atmos / 24-bit / lossless selector and fallback copy | Provider manifest resolver with legal credentials and device capability checks |
 | Canvas | Motion-art state and live Canvas badge | Provider Canvas/animated artwork URL + low-power playback policy |
 | Lyrics | Lyrics entry-point direction in settings and player design | LRC/word-timestamp provider, translation service, cache |
